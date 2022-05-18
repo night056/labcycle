@@ -8,10 +8,10 @@ void main()
 		struct node *next;
 	};
 	struct node *head=NULL, *pos=NULL, *tail=NULL;
-	int ch, e,i=0;
+	int ch, e,i=0,j=1,a;
 	while(1)
 	{
-		printf("\n1.Insert\n2.Display\n3.Count\n4.Exit");
+		printf("\n1.Insert\n2.Display\n3.Count\n4.Search for an element\n5.Exit");
 		printf("\nenter your choice:\n");
 		scanf("%d",&ch);
 		switch(ch)
@@ -53,6 +53,20 @@ void main()
 				break;
 			}
 			case 4:
+			{
+				printf("\nenter an element which you would like to search for:\n");
+				scanf("%d",&a);
+				pos=head;
+				while(pos!=NULL)
+				{
+					if(pos->data==a)
+						printf("\nthe element you have entered is in position %d",j);
+					j++;
+					pos=pos->next;
+				}
+				break;
+			}
+			case 5:
 			{
 				printf("\ngoodbye :)");
 				exit(0);
