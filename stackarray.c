@@ -1,5 +1,57 @@
-#include<stdio.h>
-#include<stdlib.h>
+ #include<stdio.h>
+ #include<stdlib.h>
+ #define n 5
+ int top=-1;
+ int stack[n];
+ 
+ void push(int v)
+ {
+ 	if(isfull())
+ 		printf("\nOverflow\n");
+ 	else
+ 	{
+ 		top++;
+ 		stack[top]=v;
+ 		printf("\n%d pushed",stack[top]);
+ 	}
+ }
+ void pop()
+ {
+ 	if(isempty())
+ 		printf("\nUnderflow");
+ 	else
+ 	{
+ 		printf("\n%d popped",stack[top]);
+ 		top--;
+ 	}
+ }
+ int isfull()
+ {
+ 	if(top==n-1)
+ 		return 1;
+ 	else
+ 		return 0;
+ }
+ int isempty()
+ {
+ 	if(top==-1)
+ 		return 1;
+ 	else 
+ 		return 0;
+ }
+ void findtop()
+ {
+ 	printf("\ntop position %d",top);
+ 	printf("\nthe value of top is %d",stack[top]);
+ }
+ void display()
+ {
+ 	int i,x;
+ 	x=top;
+ 	for(i=x;i>=0;i--)
+ 		printf("\t%d",stack[i]);
+ }
+ 
  void main()
  {
  	while(1)
